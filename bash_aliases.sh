@@ -34,4 +34,4 @@ alias speedread='$HOME/Downloads/speedread/speedread'
 bat_help() { 
         "$1" --help | batcat 
 }
-alias bathelp='bat_help'
+alias bat-help='bat_help'
