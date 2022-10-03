@@ -17,7 +17,8 @@ alias git-show-lastn=' bash $HOME/scripts/gitshowcom.sh' # Look behind at the nt
 
 # Utils
 lsize() { 
-        du -s "${1}"/* | sort -rn | cut -f2- | xargs -d "\n" du -sh ;
+        du -s "${1}"/* 2> >(grep -v '^du: cannot \(access\|read\)' >&2) | sort -rn | \
+        cut -f2- | xargs -d "\n" du -sh 2> >(grep -v '^du: cannot \(access\|read\)' >&2);
 }
 #alias ls-size='lsize $1wq'
 alias ls-hidden='ls -d .* --color=auto'  # List hidden files
@@ -25,7 +26,7 @@ alias ls-hidden='ls -d .* --color=auto'  # List hidden files
 alias speedread='$HOME/Downloads/speedread/speedread'
 
 #Bat is required
-bat_help(){ 
+bat_help() { 
         "$1" --help | batcat 
 }
 alias bathelp='bat_help'
