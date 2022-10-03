@@ -16,11 +16,16 @@ alias git-graph='git log --graph --oneline'                      # A simpler heu
 alias git-show-lastn=' bash $HOME/scripts/gitshowcom.sh' # Look behind at the nth commit back in the log.
 
 # Utils
-function lsize() { du -s ${1}/* | sort -rn | cut -f2- | xargs -d "\n" du -sh }
+lsize() { 
+        du -s "${1}"/* | sort -rn | cut -f2- | xargs -d "\n" du -sh ;
+}
 #alias ls-size='lsize $1wq'
 alias ls-hidden='ls -d .* --color=auto'  # List hidden files
 
 alias speedread='$HOME/Downloads/speedread/speedread'
 
-function bat-help(){ $1 --help | batcat }  #Bat is requird
-alias bathelp='bat-help'
+#Bat is required
+bat_help(){ 
+        "$1" --help | batcat 
+}
+alias bathelp='bat_help'
