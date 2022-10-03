@@ -21,17 +21,15 @@ alias git-graph-pr="git log --graph --abbrev-commit --decorate --format=format:'
 alias git-show-lastn=' bash $HOME/scripts/gitshowcom.sh' # Look behind at the nth commit back in the log.
 
 # Utils
-lsize() { 
+function lsize() { 
         du -s "${1}"/* 2> >(grep -v '^du: cannot \(access\|read\)' >&2) | sort -rn | \
-        cut -f2- | xargs -d "\n" du -sh 2> >(grep -v '^du: cannot \(access\|read\)' >&2);
-}
+        cut -f2- | xargs -d "\n" du -sh 2> >(grep -v '^du: cannot \(access\|read\)' >&2); }
+alias ls-size='lsize $1wq'
+
 
 alias ls-hidden='ls -d .* --color=auto'  # List hidden files
 
 alias speedread='$HOME/Downloads/speedread/speedread'
 
-#Bat is required
-bat_help() { 
-        "$1" --help | batcat 
-}
+function bat_help() { "$1" --help | batcat ;} #Bat is required
 alias bat-help='bat_help'
