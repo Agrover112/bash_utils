@@ -1,4 +1,4 @@
-
+#!/bin/sh
 # Venv ALiases                                                                   
 alias venv-list='locate --regex "bin/activate"$'        # Locate /bin/activate paths for both conda and venv                         
 alias seder='sed  's/bin\/activate$//' '  # Cannot remember
