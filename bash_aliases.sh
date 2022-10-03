@@ -13,14 +13,14 @@ alias conda-ls='conda env list'     # List conda environments
                                                                                  
 #Git Aliases                                                                     
 alias git-graph='git log --graph --oneline'                      # A simpler heuristic                                   
-alias git-show-lastn=' bash /home/meow/scripts/gitshowcom.sh' # Look behind at the nth commit back in the log.
+alias git-show-lastn=' bash $HOME/scripts/gitshowcom.sh' # Look behind at the nth commit back in the log.
 
 # Utils
 function lsize() { du -s ${1}/* | sort -rn | cut -f2- | xargs -d "\n" du -sh }
 #alias ls-size='lsize $1wq'
 alias ls-hidden='ls -d .* --color=auto'  # List hidden files
 
-alias speedread='~/$USER/Downloads/speedread/speedread'
+alias speedread='$HOME/Downloads/speedread/speedread'
 
 function bat-help(){ $1 --help | batcat }  #Bat is requird
 alias bathelp='bat-help'
