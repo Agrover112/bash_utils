@@ -16,7 +16,8 @@ alias conda-r="conda remove"                        # Removes a list of packages
 
 #Git Aliases                                                
 
-alias git-graph="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all" # Simple and Beautiful way to display git log
+alias git-graph='git log --graph --oneline'         # A simpler heuristic                                   
+alias git-graph-pr="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all" # Simple and Beautiful way to display git log
 alias git-show-lastn=' bash $HOME/scripts/gitshowcom.sh' # Look behind at the nth commit back in the log.
 
 # Utils
