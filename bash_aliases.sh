@@ -22,8 +22,7 @@ alias git-show-lastn=' bash $HOME/scripts/gitshowcom.sh' # Look behind at the nt
 
 # Utils
 function lsize() { 
-        du -s "${1}"/* 2> >(grep -v '^du: cannot \(access\|read\)' >&2) | sort -rn | \
-        cut -f2- | xargs -d "\n" du -sh 2> >(grep -v '^du: cannot \(access\|read\)' >&2); }
+          find . -mindepth 1 -maxdepth 1 | xargs -d "\n" du -sh | sort -hr; }
 alias ls-size='lsize $1wq'
 
 
